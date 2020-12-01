@@ -1,0 +1,47 @@
+[
+    {
+        "index": 1,
+        "jam": "09.21",
+        "customer": "Budi Cahyati",
+        "barang": "Kipas Angin",
+        "harga_barang": "Rp 100.000",
+        "qty": "1",
+        "total": "Rp 100.000"
+    },
+    {
+        "index": 2,
+        "jam": "13.50",
+        "customer": "Ahmad Santoso",
+        "barang": "Sapu Ijuk",
+        "harga_barang": "Rp 10.000",
+        "qty": "2",
+        "total": "Rp 20.000"
+    },
+    {
+        "index": 3,
+        "jam": "15.00",
+        "customer": "Yulia",
+        "barang": "Rinso",
+        "harga_barang": "Rp 35.000",
+        "qty": "4",
+        "total": "Rp 140.000"
+    },
+    {
+        "index": 4,
+        "jam": "16.00",
+        "customer": "Evelyn",
+        "barang": "Molto",
+        "harga_barang": "Rp 35.000",
+        "qty": "4",
+        "total": "Rp 140.000"
+    },
+    {
+        "index": 5,
+        "jam": "18.30",
+        "customer": "Tara",
+        "barang": "Telur Ayam Kampung",
+        "harga_barang": "Rp 75.000",
+        "qty": "1",
+        "total": "Rp 75.000"
+    }
+]

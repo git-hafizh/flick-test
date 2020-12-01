@@ -1,0 +1,470 @@
+.NavbarItems {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: transparent;
+    transition: background-color 200ms linear;
+}
+
+.NavbarItems.active{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #eb414f;
+    transition: all 200ms ease 0s;
+    color: #fff;
+    box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.75);
+}
+
+.navbar-logo {
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.fa-react {
+    margin-left: 0.5rem;
+    font-size: 1.6rem;
+}
+
+.nav-list {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    justify-content: end;
+    margin-top: 15px;
+}
+
+.nav-list.active {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    justify-content: end;
+    margin-top: 15px;
+    color: #fff;
+    z-index: 1;
+}
+
+.nav-links {
+    color: #eb414f;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links:hover {
+    border-radius: 4px;
+}
+
+.fa-bars {
+    color: #fff;
+}
+
+.nav-links-mobile {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.icon-title{
+    color: #eb414f;
+    cursor: pointer;
+}
+
+.icon-title:hover{
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eb414f;
+    transition: all 0.2s ease;
+}
+
+.icon-title.active{
+    color: #fff;
+}
+
+.icon-title.active:hover{
+    padding-bottom: 10px;
+    border-bottom: 2px solid #fff;
+    transition: all 0.2s ease;
+}
+
+
+.btn.btn-primary.masuk {
+    border: 3px solid #eb414f;
+    border-radius: 40px;
+    background-color: transparent;
+    color: #eb414f;
+    font-size: 16px;
+    font-weight: normal;
+    width: 120px;
+    position: relative;
+  }
+  
+  .btn.btn-primary.masuk-active {
+    border: 3px solid #fff;
+    background-color: #eb414f;
+    color: #fff;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: normal;
+    width: 120px;
+    position: relative;
+  }
+  
+  .btn.btn-primary.masuk:hover {
+    color: #fff;
+    background-color: #eb414f;
+    border: 3px solid #eb414f;
+  }
+  
+  .btn.btn-primary.masuk:focus {
+    color: #fff;
+    background-color: #eb414f;
+    border: 3px solid #eb414f;
+  }
+  
+  .btn.btn-primary.masuk:active {
+    color: #fff;
+    background-color: #eb414f;
+    border: 3px solid #eb414f;
+  }
+
+  .btn.btn-primary.btn-login{
+    width: 247px;
+    padding: 2px 0;
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+  .login-account{
+    font-size: 26px;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 30px;
+  }
+
+  .error-msg{
+    display: flex;
+    font-weight: normal;
+    font-size: 12px;
+    position: relative;
+    top: -10px;
+    font-weight: bold;
+    color: #e0a708;
+    justify-content: center;
+  }
+  
+  .error-msg-red{
+    display: flex;
+    font-weight: normal;
+    font-size: 12px;
+    position: relative;
+    top: -10px;
+    font-weight: bold;
+    color: #e00808;
+    justify-content: center;
+  }
+
+  .user-text{
+    font-size: 14px;
+  }
+  
+  .user-text span{
+    color: #eb414f;
+  }
+  
+  .user-text span:hover{
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    color: #c53742;
+    cursor: pointer;
+  }
+  
+  .rememmber-me{
+    margin-left: 30px;
+  }
+  
+  .b-contain *, .b-contain *::before, .b-contain *::after {
+      box-sizing: content-box !important;
+  }
+  
+  .b-contain input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+  }
+  
+  .b-contain span {
+      line-height: 1.54;
+      font-size: 1rem;
+      font-family: inherit;
+  }
+  
+  .b-contain {
+      display: table;
+      position: relative;
+      padding-left: 1.8rem;
+      cursor: pointer;
+      margin-bottom: .5rem;
+  }
+  
+  .b-contain input[type="checkbox"] ~ .b-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1.25rem;
+      width: 1.25rem;
+      background: rgba(241, 245, 248, 1);
+      transition: background 250ms;
+      border: 1px solid rgba(184, 194, 204, 1);
+      border-radius: 0.125rem;
+  }
+  
+  .b-contain input[type="checkbox"] ~ .b-input::after {
+      content: '';
+      position: absolute;
+      display: none;
+      left: .45rem;
+      top: .18rem;
+      width: .25rem;
+      height: .6rem;
+      border: solid rgba(255, 255, 255, 1);
+      border-width: 0 2px 2px 0;
+      transition: background 250ms;
+      transform: rotate(45deg);
+  }
+  
+  .b-contain input:disabled ~ .b-input::after {
+      border-color: rgba(135, 149, 161, 1);
+  }
+  
+  .b-contain input:checked ~ .b-input::after {
+      display: block;
+  }
+  
+  .b-contain:hover input ~ .b-input,
+  .b-contain input:focus ~ .b-input {
+      background: rgb(231, 238, 243);
+  }
+  
+  .b-contain input:focus ~ .b-input {
+      box-shadow: 0 0 0 2px rgba(235, 65, 79, 0.53);
+  }
+  
+  .b-contain input:checked ~ .b-input {
+      background: rgba(235, 65, 79, 1);
+      border-color: rgba(235, 65, 79, 1);
+  }
+  
+  .b-contain input[type="checkbox"]:disabled ~ .b-input {
+      background: rgba(241, 245, 248, 1);
+      border-color: rgba(184, 194, 204, 1);
+      opacity: 0.6;
+      cursor: not-allowed;
+  }
+  
+  .b-contain input:checked:focus ~ .b-input, .b-contain:hover input:not([disabled]):checked ~ .b-input {
+      background: rgba(235, 65, 79, 1);
+      border-color: rgba(235, 65, 79, 1);
+  }
+  
+  .b-contain .b-input::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3rem;
+      height: 3rem;
+      margin-left: -0.85rem;
+      margin-top: -0.85rem;
+      background: rgba(0, 130, 243, 1);
+      border-radius: 2rem;
+      opacity: .6;
+      z-index: 99999;
+      transform: scale(0);
+  }
+  
+
+/* iPad */
+@media (max-width: 991.98px) {
+    .NavbarItems{
+        position: relative;
+    }
+
+    .NavbarItems.active{
+        position: relative;
+        background-color: transparent;
+    }
+
+    .nav-list {
+        display: block;
+        flex-direction: column;
+        width: 100%;
+        height: 300px;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 1;
+        color: #fff;
+        transition: all 0.5s ease;
+    }
+
+    .nav-list.active {
+        background: #eb414f;
+        color: #fff;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+        padding: 0;
+        display: block;
+    }
+
+    .nav-links {
+        text-align: center;
+        padding: 1.5rem;
+        width: 100%;
+        display: table;
+        color: #fff;
+        
+    }
+
+    .nav-links:hover {
+        background-color: #8d2f37;
+        border-radius: 0;
+    }
+
+    .icon-title{
+        color: #fff;
+    }
+
+    .icon-title:hover{
+        cursor: pointer;
+    }
+
+    .navbar-logo {
+        position: absolute;
+        font-size: 32px;
+        top: 0;
+        left: 0;
+        transform: translate(25%, 50%);
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    .fa-times {
+        color: #fff;
+        font-size: 2rem;
+    }
+
+    .nav-links-mobile {
+        display: block;
+        text-align: center;
+        padding: 1.5rem;
+        margin: 2rem auto;
+        border-radius: 4px;
+        width: 80%;
+        background: #4ad9e4;
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.5rem;
+    }
+
+    .nav-links-mobile:hover {
+        background: #fff;
+        color: #6568F4;
+        transition: 250ms;
+    }
+
+    .btn.btn-primary.masuk {
+        border: 3px solid #fff;
+        border-radius: 20px;
+        background-color: transparent;
+        color: #fff;
+        font-size: 16px;
+        font-weight: normal;
+        width: 120px;
+        position: relative;
+        margin-top: 20px;
+      }
+
+      .btn.btn-primary.masuk:hover {
+        background-color: #fff;
+        color: #eb414f;
+      }
+
+      .btn.btn-primary.masuk-active {
+        color: #fff;
+        position: relative;
+        margin-top: 20px;
+      }
+}
+
+/* Phone */
+@media (max-width: 767.98px){
+    .mymodal {
+        position: fixed;
+        border: 1px solid #ccc;
+        background: #fff;
+        overflow: auto;
+        margin-top: 40px;
+        height: auto;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        animation: slide-top 1s;
+    }
+
+    .heroku-login{
+        width: 50%;
+    }
+
+    .login-account{
+        font-size: 26px;
+        text-align: center;
+        font-weight: normal;
+        margin-bottom: 20px;
+        margin-left: 0;
+    }
+
+    .rememmber-me{
+        margin-left: 75px;
+    }
+
+    .user-text{
+        margin-top: 10px;
+    }
+}
+
+@keyframes slide-top {
+    0% {
+      transform: translate(-50%, 0);
+    }
+    100% {
+      transform: translate(-50%, -50%);
+    }
+  }
