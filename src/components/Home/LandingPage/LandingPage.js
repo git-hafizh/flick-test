@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import './LandingPage.css'
 import Modal from "react-modal";
@@ -10,14 +10,24 @@ import { Close, Heroku, Login } from '../../assetsImg';
 
 const LandingPage = () => {
   const [modal, setModal] = useState(false);
-  const { handleSubmit, register, errors } = useForm({
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: ""
+  })
+
+  const { handleSubmit, register, errors, formState } = useForm({
     mode: 'onChange'
   });
+
   const history = useHistory();
 
   const onSubmit = (values) => {
     console.log(values);
   }
+
+  const trapSpacesForRequiredFields = (value) => !!value.trim();
 
   function Submitted() {
     toast.success("Account has been successfully created");
@@ -27,6 +37,12 @@ const LandingPage = () => {
   }
 
   const toggle = () => setModal(!modal);
+
+  function Change(e){
+    const newValue = {...form}
+    newValue[e.target.name] = e.target.value;
+    setForm(newValue)
+  }
 
   return (
     <Container>
@@ -52,9 +68,10 @@ const LandingPage = () => {
                 <Col md={6}>
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <p className="make-account">Buat Akun</p>
-                    <input className="account name" placeholder="Nama" name="name" type="text" required
+                    <input className="account name" placeholder="Nama" name="name" type="text" required onChange={(e) => Change(e)}
                       ref={register({
                         required: true,
+                        validate: trapSpacesForRequiredFields,
                         pattern: {
                           value: /^[\w\-\s]+$/,
                           message: "Entered value does not match name format"
@@ -62,9 +79,10 @@ const LandingPage = () => {
                       })}
                     />
                     {errors.name && <span className="error-msg-red">{errors.name.message}</span>}
-                    <input className="account email" placeholder="Email" name="email" required
+                    <input className="account email" placeholder="Email" name="email" required onChange={(e) => Change(e)}
                       ref={register({
                         required: true,
+                        validate: trapSpacesForRequiredFields,
                         pattern: {
                           value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                           message: "Entered value does not match email format"
@@ -72,9 +90,10 @@ const LandingPage = () => {
                       })}
                     />
                     {errors.email && <span className="error-msg-red">{errors.email.message}</span>}
-                    <input className="account pass" placeholder="Password" name="password" type="password" required
+                    <input className="account pass" placeholder="Password" name="password" type="password" required onChange={(e) => Change(e)}
                       ref={register({
                         required: true,
+                        validate: trapSpacesForRequiredFields,
                         minLength: 8,
                         maxLength: 20,
                       })}
@@ -82,8 +101,8 @@ const LandingPage = () => {
                     {errors.password && errors.password.type === "minLength" && <span className="error-msg">Minimum 8 characters</span>}
                     {errors.password && errors.password.type === "maxLength" && <span className="error-msg-red">Maximum length exceeded</span>}
 
-                      <Button type="submit" onClick={Submitted} className="btn-register" disabled={errors.email || errors.password || errors.name ? true : false}>
-                        Daftar
+                    <Button type="submit" onClick={Submitted} className="btn-register" disabled={!formState.isValid}>
+                      Daftar
                       </Button>
                   </form>
                   <p style={{ textAlign: "center" }} className="user-text">Sudah punya akun? <a href="/">Masuk</a></p>

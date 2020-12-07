@@ -13,7 +13,7 @@ const Navbar = () => {
   const [clicked, setClicked] = useState(false)
   const [header, setHeader] = useState(false);
   const [modal, setModal] = useState(false);
-  const { handleSubmit, register, errors } = useForm({
+  const { handleSubmit, register, errors, formState } = useForm({
     mode: 'onChange'
   });
   const history = useHistory()
@@ -107,7 +107,7 @@ const Navbar = () => {
                     <div class="b-input"></div>
                   </label>
                 </div>
-                <Button onClick={Submitted} type="submit" className="btn-login" disabled={errors.email || errors.password ? true : false}>Masuk</Button>
+                <Button onClick={Submitted} type="submit" className="btn-login" disabled={!formState.isValid}>Masuk</Button>
               </form>
               <p style={{ textAlign: "center" }} className="user-text">Belum punya akun?
               <Link activeClass="active" to="register-modal" spy={true} smooth={true} offset={-80} duration={500} delay={300}>
